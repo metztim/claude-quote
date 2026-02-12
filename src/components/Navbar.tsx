@@ -27,6 +27,12 @@ export function Navbar() {
           >
             GitHub
           </a>
+          <Link
+            href="/submit"
+            className="bg-accent-blue text-bg-primary px-4 py-1.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            Submit a quote
+          </Link>
         </div>
       </div>
     </nav>
