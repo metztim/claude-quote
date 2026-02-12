@@ -1,7 +1,7 @@
 ---
 name: submit-quote
 description: Submit a memorable Claude quote from this conversation to ClaudeQuote.com. Use when the user says something like "submit this to Claude Quotes", "that's quotable", "save this quote", or "send this to ClaudeQuote".
-disable-model-invocation: true
+disable-model-invocation: false
 allowed-tools: ["Bash(curl *claudequote.com*)", "Read(~/.claudequote/*)", "Write(~/.claudequote/*)"]
 ---
 

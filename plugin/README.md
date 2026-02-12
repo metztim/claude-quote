@@ -15,7 +15,7 @@ claude /plugin install .
 ### As a personal skill
 
 ```bash
-cp -r skills/submit-quote ~/.claude/skills/
+mkdir -p ~/.claude/skills && cp -r skills/submit-quote ~/.claude/skills/
 ```
 
 ## Usage

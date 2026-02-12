@@ -52,7 +52,8 @@ export default function SubmitPage() {
               # Or just copy the skill directly
             </p>
             <p className="text-text-primary">
-              cp -r plugin/skills/submit-quote ~/.claude/skills/
+              mkdir -p ~/.claude/skills && cp -r plugin/skills/submit-quote
+              ~/.claude/skills/
             </p>
           </div>
         </section>

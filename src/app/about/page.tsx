@@ -100,7 +100,8 @@ export default function AboutPage() {
             </p>
             <p className="text-text-tertiary mt-4 mb-2"># Or as a personal skill</p>
             <p className="text-text-primary">
-              cp -r plugin/skills/submit-quote ~/.claude/skills/
+              mkdir -p ~/.claude/skills && cp -r plugin/skills/submit-quote
+              ~/.claude/skills/
             </p>
           </div>
 
