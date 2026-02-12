@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ClaudeQuote
 
-## Getting Started
+The best things Claude has ever said. A community-driven collection of memorable Claude quotes, submitted directly from Claude Code conversations with built-in authenticity verification.
 
-First, run the development server:
+**[claudequote.com](https://claudequote.com)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What is this?
+
+People share Claude quotes everywhere — Twitter, Medium, Reddit, LinkedIn. But screenshots can be faked, and there's no central place to browse the best ones.
+
+ClaudeQuote solves this with two key ideas:
+
+1. **Direct submission from Claude Code** — Quotes are submitted from the actual conversation where they happened, not copy-pasted from screenshots
+2. **Authenticity verification** — The submission process analyzes conversation context to determine if a quote arose organically or was prompted
+
+## How it works
+
+### Submitting quotes
+
+Install the [Claude Code plugin](./plugin) and when Claude says something memorable:
+
+```
+> Submit that to ClaudeQuote
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Claude will extract the quote, verify its authenticity, categorize it, and let you review before submitting.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Browsing quotes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Visit [claudequote.com](https://claudequote.com) to browse quotes by category:
 
-## Learn More
+- **Funny** — Humor, absurdity, unexpected comedy
+- **Profound** — Deep insights and wisdom
+- **Philosophical** — Existential musings, nature of AI
+- **Weird** — Surreal, uncanny valley moments
+- **Technical** — Brilliant technical explanations
+- **Wholesome** — Kind, supportive, touching
+- **Savage** — Burns, roasts, brutal honesty
+- **Meta** — Claude talking about itself
 
-To learn more about Next.js, take a look at the following resources:
+### Verification badges
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each quote shows how organically it arose:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Verified organic** — Natural conversation, quote emerged incidentally
+- **Likely organic** — Probably organic, minor ambiguity
+- **Possibly prompted** — Some signals suggest the response was solicited
 
-## Deploy on Vercel
+## Local development
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Prerequisites
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Node.js 18+
+- A [Supabase](https://supabase.com) account (free tier works)
+
+### Setup
+
+```bash
+# Clone the repo
+git clone https://github.com/metztim/claude-quote.git
+cd claude-quote
+
+# Install dependencies
+npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your Supabase credentials
+
+# Set up the database
+# Run supabase/schema.sql in your Supabase SQL Editor
+# Optionally run supabase/seed.sql for sample data
+
+# Start dev server
+npm run dev
+```
+
+### Tech stack
+
+- [Next.js](https://nextjs.org) 16 (App Router)
+- [Supabase](https://supabase.com) (PostgreSQL)
+- [Tailwind CSS](https://tailwindcss.com)
+- Deployed on [Vercel](https://vercel.com)
+
+## Contributing
+
+Contributions welcome! Areas where help is especially appreciated:
+
+- **UI/UX improvements** — Better card designs, animations, mobile experience
+- **New features** — Search, trending algorithm, user profiles
+- **Plugin improvements** — Better verification heuristics, multi-model support
+- **Bug fixes** — Always welcome
+
+## License
+
+MIT
