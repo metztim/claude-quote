@@ -7,7 +7,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 export function FilterBar({
   activeCategory,
-  activeSort = "newest",
+  activeSort = "top",
 }: {
   activeCategory?: string;
   activeSort?: SortOption;

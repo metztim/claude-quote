@@ -47,7 +47,7 @@ export default async function Home({
   searchParams: Promise<{ sort?: string; tag?: string }>;
 }) {
   const params = await searchParams;
-  const sort = (params.sort === "top" ? "top" : "newest") as SortOption;
+  const sort = (params.sort === "newest" ? "newest" : "top") as SortOption;
   const tag = params.tag;
   const quotes = await getQuotes(sort, tag);
 
