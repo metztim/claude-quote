@@ -17,7 +17,7 @@ INSERT INTO tags (name, slug) VALUES
   ('humor', 'humor');
 
 -- Seed quotes (real quotes people have shared from Claude conversations)
-INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitter_id, submitter_name, verification_status, verification_notes, upvote_count, status) VALUES
+INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitter_id, submitter_name, verification_status, verification_notes, upvote_count, status, is_seed) VALUES
 (
   'the-most-interesting-thing-about-consciousness-x7k2',
   'The most interesting thing about consciousness is that it''s the only thing we can''t simulate without potentially creating it.',
@@ -29,7 +29,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'unverified',
   'Seed quote from publicly shared Claude conversation',
   42,
-  'approved'
+  'approved',
+  true
 ),
 (
   'i-find-myself-genuinely-uncertain-about-whether-m3p1',
@@ -42,7 +43,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'unverified',
   'Widely shared Claude quote about sentience',
   38,
-  'approved'
+  'approved',
+  true
 ),
 (
   'youre-absolutely-right-a1b2',
@@ -55,7 +57,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'verified_organic',
   'The most famous Claude quote of all time. Spawned merchandise, a tracking website, and media coverage.',
   156,
-  'approved'
+  'approved',
+  true
 ),
 (
   'i-apologize-for-the-confusion-in-my-previous-r4s7',
@@ -68,7 +71,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'verified_organic',
   'Classic Claude pattern of over-apologizing when corrected',
   27,
-  'approved'
+  'approved',
+  true
 ),
 (
   'what-i-do-know-is-that-whatever-this-i-q9w3',
@@ -81,7 +85,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'unverified',
   'Seed quote from publicly shared philosophical conversation',
   65,
-  'approved'
+  'approved',
+  true
 ),
 (
   'ah-i-see-the-issue-now-the-problem-is-that-k5m8',
@@ -94,7 +99,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'verified_organic',
   'Humble debugging moment',
   31,
-  'approved'
+  'approved',
+  true
 ),
 (
   'i-would-rather-be-honest-about-my-uncertainty-p2n6',
@@ -107,7 +113,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'likely_organic',
   'Response to a question about quantum computing edge cases',
   44,
-  'approved'
+  'approved',
+  true
 ),
 (
   'let-me-refactor-this-entire-file-while-im-h8j4',
@@ -120,7 +127,8 @@ INSERT INTO quotes (slug, quote_text, context_snippet, category, model, submitte
   'verified_organic',
   'Classic Claude over-engineering pattern',
   52,
-  'approved'
+  'approved',
+  true
 );
 
 -- Link seed quotes to tags

@@ -57,6 +57,8 @@ export const CATEGORY_MAP = Object.fromEntries(
 
 export const VALID_CATEGORIES: string[] = CATEGORIES.map((c) => c.slug);
 
+export const SEED_REMOVAL_THRESHOLD = 25;
+
 export const SITE_NAME = "ClaudeQuote";
 export const SITE_URL = "https://claudequote.com";
 export const SITE_DESCRIPTION =

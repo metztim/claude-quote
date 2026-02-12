@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase/server";
+import { shouldShowSeedContent } from "@/lib/seed";
 import { CATEGORIES } from "@/lib/constants";
 
 export async function GET() {
   const supabase = createServerClient();
+  const showSeed = await shouldShowSeedContent();
 
   const { data: tags } = await supabase
     .from("tags")
@@ -26,10 +28,16 @@ export async function GET() {
   }));
 
   // Get category counts
-  const { data: quotes } = await supabase
+  let categoryQuery = supabase
     .from("quotes")
     .select("category")
     .eq("status", "approved");
+
+  if (!showSeed) {
+    categoryQuery = categoryQuery.eq("is_seed", false);
+  }
+
+  const { data: quotes } = await categoryQuery;
 
   const categoryCounts: Record<string, number> = {};
   quotes?.forEach((q) => {

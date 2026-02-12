@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { createServerClient } from "@/lib/supabase/server";
+import { shouldShowSeedContent } from "@/lib/seed";
 import { CATEGORY_MAP, SITE_URL } from "@/lib/constants";
 import { Quote, CategorySlug, SortOption } from "@/lib/types";
 import { QuoteGrid } from "@/components/QuoteGrid";
@@ -9,12 +10,17 @@ import { FilterBar } from "@/components/FilterBar";
 
 async function getQuotesByCategory(category: string, sort: SortOption) {
   const supabase = createServerClient();
+  const showSeed = await shouldShowSeedContent();
 
   let query = supabase
     .from("quotes")
     .select("*, quote_tags(tag_id, tags(id, name, slug))")
     .eq("status", "approved")
     .eq("category", category);
+
+  if (!showSeed) {
+    query = query.eq("is_seed", false);
+  }
 
   if (sort === "top") {
     query = query.order("upvote_count", { ascending: false });

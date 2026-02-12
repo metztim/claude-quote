@@ -14,12 +14,14 @@ CREATE TABLE quotes (
   verification_status TEXT NOT NULL DEFAULT 'unverified',
   verification_notes TEXT,
   upvote_count INTEGER DEFAULT 0,
+  is_seed BOOLEAN DEFAULT false,
   status TEXT DEFAULT 'approved',
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
 
 CREATE INDEX idx_quotes_category ON quotes(category);
+CREATE INDEX idx_quotes_is_seed ON quotes(is_seed);
 CREATE INDEX idx_quotes_status ON quotes(status);
 CREATE INDEX idx_quotes_created ON quotes(created_at DESC);
 CREATE INDEX idx_quotes_upvotes ON quotes(upvote_count DESC);

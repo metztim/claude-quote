@@ -14,7 +14,11 @@ export function QuoteCard({ quote }: { quote: Quote }) {
   return (
     <article
       className="bg-bg-secondary border border-border rounded-lg overflow-hidden hover:border-text-tertiary transition-colors"
-      style={{ borderLeftColor: categoryColor, borderLeftWidth: "3px" }}
+      style={{
+        borderLeftColor: categoryColor,
+        borderLeftWidth: "3px",
+        borderLeftStyle: quote.is_seed ? "dashed" : "solid",
+      }}
     >
       <Link href={`/quotes/${quote.slug}`} className="block p-5">
         <blockquote className="font-mono text-text-primary text-sm leading-relaxed">
@@ -38,6 +42,9 @@ export function QuoteCard({ quote }: { quote: Quote }) {
             </span>
             {quote.model && (
               <span className="font-mono">{formatModel(quote.model)}</span>
+            )}
+            {quote.is_seed && (
+              <span className="font-mono text-text-tertiary italic">Example</span>
             )}
           </div>
           <UpvoteButton slug={quote.slug} initialCount={quote.upvote_count} />

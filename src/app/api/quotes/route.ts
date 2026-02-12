@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerClient } from "@/lib/supabase/server";
+import { shouldShowSeedContent } from "@/lib/seed";
 import { VALID_CATEGORIES } from "@/lib/constants";
 import { generateSlug, slugifyTag } from "@/lib/utils";
 import { QuoteSubmission } from "@/lib/types";
 
 export async function GET(request: NextRequest) {
   const supabase = createServerClient();
+  const showSeed = await shouldShowSeedContent();
   const { searchParams } = new URL(request.url);
 
   const category = searchParams.get("category");
@@ -19,6 +21,10 @@ export async function GET(request: NextRequest) {
     .from("quotes")
     .select("*, quote_tags(tag_id, tags(id, name, slug))", { count: "exact" })
     .eq("status", "approved");
+
+  if (!showSeed) {
+    query = query.eq("is_seed", false);
+  }
 
   if (category) {
     query = query.eq("category", category);

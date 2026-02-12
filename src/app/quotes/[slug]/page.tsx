@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createServerClient } from "@/lib/supabase/server";
+import { shouldShowSeedContent } from "@/lib/seed";
 import { CATEGORY_MAP, SITE_URL } from "@/lib/constants";
 import { Quote, CategorySlug } from "@/lib/types";
 import { formatModel, formatDate, truncateText } from "@/lib/utils";
@@ -35,13 +36,20 @@ async function getRelatedQuotes(
   excludeId: string
 ): Promise<Quote[]> {
   const supabase = createServerClient();
+  const showSeed = await shouldShowSeedContent();
 
-  const { data } = await supabase
+  let query = supabase
     .from("quotes")
     .select("*, quote_tags(tag_id, tags(id, name, slug))")
     .eq("status", "approved")
     .eq("category", category)
-    .neq("id", excludeId)
+    .neq("id", excludeId);
+
+  if (!showSeed) {
+    query = query.eq("is_seed", false);
+  }
+
+  const { data } = await query
     .order("upvote_count", { ascending: false })
     .limit(3);
 
@@ -123,13 +131,23 @@ export default async function QuotePage({
 
       <article className="mb-12">
         <div
-          className="border-l-4 pl-6 mb-6"
-          style={{ borderColor: categoryColor }}
+          className="pl-6 mb-6"
+          style={{
+            borderLeft: `4px ${quote.is_seed ? "dashed" : "solid"} ${categoryColor}`,
+          }}
         >
           <blockquote className="font-mono text-xl sm:text-2xl leading-relaxed text-text-primary">
             &ldquo;{quote.quote_text}&rdquo;
           </blockquote>
         </div>
+
+        {quote.is_seed && (
+          <div className="mb-6 px-4 py-3 border border-border rounded-lg bg-bg-secondary text-sm text-text-secondary font-mono">
+            <span className="text-text-tertiary italic">Example content</span>{" "}
+            &mdash; This quote was added to populate the site at launch. It will
+            automatically disappear once enough community submissions arrive.
+          </div>
+        )}
 
         {quote.context_snippet && (
           <p className="text-text-tertiary text-sm mb-6 italic">

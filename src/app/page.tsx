@@ -1,16 +1,22 @@
 import { Suspense } from "react";
 import { createServerClient } from "@/lib/supabase/server";
+import { shouldShowSeedContent } from "@/lib/seed";
 import { Quote, SortOption } from "@/lib/types";
 import { QuoteGrid } from "@/components/QuoteGrid";
 import { FilterBar } from "@/components/FilterBar";
 
 async function getQuotes(sort: SortOption = "newest", tag?: string) {
   const supabase = createServerClient();
+  const showSeed = await shouldShowSeedContent();
 
   let query = supabase
     .from("quotes")
     .select("*, quote_tags(tag_id, tags(id, name, slug))")
     .eq("status", "approved");
+
+  if (!showSeed) {
+    query = query.eq("is_seed", false);
+  }
 
   if (sort === "top") {
     query = query.order("upvote_count", { ascending: false });

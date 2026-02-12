@@ -10,6 +10,7 @@ export interface Quote {
   verification_status: VerificationStatus;
   verification_notes: string | null;
   upvote_count: number;
+  is_seed: boolean;
   status: string;
   created_at: string;
   updated_at: string;
