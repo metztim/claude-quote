@@ -62,4 +62,4 @@ export const SEED_REMOVAL_THRESHOLD = 25;
 export const SITE_NAME = "ClaudeQuote";
 export const SITE_URL = "https://claudequote.com";
 export const SITE_DESCRIPTION =
-  "The best things Claude has ever said. Submitted directly from Claude Code conversations with built-in authenticity verification.";
+  "Things Claude said while vibing. Submitted by humans from real Claude Code chats, with built-in authenticity verification.";

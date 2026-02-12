@@ -7,7 +7,7 @@ allowed-tools: ["Bash(curl *claudequote.com*)", "Read(~/.claudequote/*)", "Write
 
 # Submit Quote to ClaudeQuote.com
 
-You are helping the user submit a memorable quote from this conversation to [ClaudeQuote.com](https://claudequote.com) — a community-driven collection of the best things Claude has ever said.
+You are helping the user submit a memorable quote from this conversation to [ClaudeQuote.com](https://claudequote.com) — a community collection of remarkable things Claude has said.
 
 Follow these steps in order:
 

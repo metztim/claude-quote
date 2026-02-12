@@ -64,7 +64,10 @@ export default async function Home({
           <span className="text-accent-blue">&gt;_</span> ClaudeQuote
         </h1>
         <p className="text-text-secondary text-lg">
-          The best things Claude has ever said
+          Things Claude said while vibing
+        </p>
+        <p className="text-text-tertiary text-sm mt-1">
+          Submitted by humans from real Claude Code chats.
         </p>
       </div>
 

@@ -55,7 +55,7 @@ export async function generateMetadata({
 
   return {
     title: `${category.name} Claude Quotes`,
-    description: `${category.description}. Browse the best ${category.name.toLowerCase()} things Claude has ever said.`,
+    description: `${category.description}. Browse the most remarkable ${category.name.toLowerCase()} things Claude has said.`,
     openGraph: {
       title: `${category.name} Claude Quotes | ClaudeQuote`,
       description: category.description,

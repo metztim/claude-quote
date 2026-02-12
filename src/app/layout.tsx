@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "ClaudeQuote - The best things Claude has ever said",
+        alt: "ClaudeQuote - Things Claude said while vibing",
       },
     ],
   },

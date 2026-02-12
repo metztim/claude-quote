@@ -1,12 +1,12 @@
 # ClaudeQuote
 
-The best things Claude has ever said. A community-driven collection of memorable Claude quotes, submitted directly from Claude Code conversations with built-in authenticity verification.
+Things Claude said while vibing. A community collection of remarkable Claude quotes, submitted from real Claude Code conversations with built-in authenticity verification.
 
 **[claudequote.com](https://claudequote.com)**
 
 ## What is this?
 
-People share Claude quotes everywhere — Twitter, Medium, Reddit, LinkedIn. But screenshots can be faked, and there's no central place to browse the best ones.
+People share Claude quotes everywhere — Twitter, Medium, Reddit, LinkedIn. But screenshots can be faked, and there's no central place to browse and share them.
 
 ClaudeQuote solves this with two key ideas:
 

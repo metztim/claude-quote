@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ClaudeQuote is a community-driven collection of the most memorable things Claude has ever said, submitted directly from Claude Code conversations.",
+    "ClaudeQuote collects the remarkable things Claude says during real coding sessions, submitted directly from Claude Code conversations.",
 };
 
 export default function AboutPage() {
@@ -19,9 +19,9 @@ export default function AboutPage() {
             What is this?
           </h2>
           <p>
-            ClaudeQuote is a community-driven collection of the most memorable,
-            funny, profound, weird, and impressive things Claude has ever said.
-            Every quote is submitted directly from a{" "}
+            ClaudeQuote collects the things Claude says when you&apos;re just
+            trying to code — the funny, profound, weird, and surprisingly human
+            moments. Every quote is submitted directly from a{" "}
             <a
               href="https://claude.com/claude-code"
               target="_blank"

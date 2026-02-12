@@ -4,7 +4,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
         <p className="font-mono">claudequote.com</p>
         <p>
-          Quotes submitted directly from{" "}
+          Every quote submitted from a real{" "}
           <a
             href="https://claude.com/claude-code"
             target="_blank"
@@ -13,7 +13,7 @@ export function Footer() {
           >
             Claude Code
           </a>{" "}
-          conversations
+          conversation
         </p>
       </div>
     </footer>

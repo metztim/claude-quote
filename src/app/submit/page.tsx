@@ -3,7 +3,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Submit a quote",
   description:
-    "Submit memorable Claude quotes directly from your Claude Code conversation.",
+    "Claude said something wild? Submit it straight from your conversation.",
 };
 
 export default function SubmitPage() {
@@ -13,7 +13,7 @@ export default function SubmitPage() {
         Submit a quote
       </h1>
       <p className="text-text-secondary mb-10 text-lg">
-        Share the best things Claude has said — directly from your conversation.
+        Claude just say something remarkable? Submit it straight from your conversation.
       </p>
 
       <div className="space-y-10">
@@ -69,7 +69,7 @@ export default function SubmitPage() {
           </div>
           <p className="text-text-secondary">
             Use Claude Code as you normally would. When Claude says something
-            funny, profound, weird, or just memorable — that&apos;s your moment.
+            funny, profound, weird, or just unexpected — that&apos;s your moment.
           </p>
         </section>
 
