@@ -12,10 +12,10 @@ export function Navbar() {
             ClaudeQuote
           </span>
         </Link>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           <Link
             href="/about"
-            className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+            className="hidden sm:inline text-text-secondary hover:text-text-primary transition-colors text-sm"
           >
             About
           </Link>
@@ -23,15 +23,16 @@ export function Navbar() {
             href="https://github.com/metztim/claude-quote"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-secondary hover:text-text-primary transition-colors text-sm"
+            className="hidden sm:inline text-text-secondary hover:text-text-primary transition-colors text-sm"
           >
             GitHub
           </a>
           <Link
             href="/submit"
-            className="bg-accent-blue text-bg-primary px-4 py-1.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
+            className="bg-accent-blue text-bg-primary px-3 py-1.5 sm:px-4 rounded-full text-sm font-medium hover:opacity-90 transition-opacity"
           >
-            Submit a quote
+            <span className="sm:hidden">Submit</span>
+            <span className="hidden sm:inline">Submit a quote</span>
           </Link>
         </div>
       </div>
